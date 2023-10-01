@@ -1,5 +1,4 @@
-name:
-  Test React App
+name: Test React App
 
 on:
   push:
@@ -11,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
-        
-
-
+        uses: actions/checkout@v3
+      - name: Install NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm install
